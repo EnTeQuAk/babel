@@ -320,7 +320,7 @@ class extract_messages(Command):
         mappings = {}
 
         if self.mapping_file:
-            fileobj = open(self.mapping_file, 'rb')
+            fileobj = open(self.mapping_file, 'r')
             try:
                 method_map, options_map = parse_mapping(fileobj)
                 for dirname in self.input_dirs:
@@ -872,7 +872,7 @@ class CommandLineInterface(object):
             keywords.update(parse_keywords(options.keywords))
 
         if options.mapping_file:
-            fileobj = open(options.mapping_file, 'rb')
+            fileobj = open(options.mapping_file, 'r')
             try:
                 method_map, options_map = parse_mapping(fileobj)
             finally:
